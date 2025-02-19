@@ -1,0 +1,89 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.ContainerGridDesktop {
+  display: grid;
+  grid-template-columns: 5% 95%;
+  /* border: 1px solid #db0000aa; */
+  width: 100%;
+  min-height: 100vh; /* Garante que o grid ocupe toda a altura da tela */
+
+  @media (min-width: 1080px) {
+    grid-template-columns: 3% 97%;
+  }
+}
+
+.backgroundImage{
+  background-image:  url("./assets/imgs/image10.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.containerBarMenu{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 1px solid #db0000aa; */
+  height: 100%;
+  width: 95%;
+  padding: 5%;
+  position: relative;
+  @media (min-width: 1080px) {
+    margin-left: 10%;
+    padding: 10%;
+  }
+}
+
+.barMenu {
+  display: flex;
+  flex-direction:  column;
+  justify-content: center; /* Centraliza cada item individualmente */
+  align-items: center;
+  /* border: 1px solid #db0000aa; */
+  width: 100%;
+  height: 60vh;
+  border-radius: 15px; /* Define bordas arredondadas */
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse os cantos */
+  background-color: #0e0d0dd8;
+  justify-content: space-evenly;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 13%;
+  padding-bottom: 13%;
+  gap: 5%;
+}
+
+.containerIcons{
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(100%, 1fr)); /* Altura automática */
+  justify-items: center; /* Centraliza cada item individualmente */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid #db0000aa; */
+  border-radius: 15px; /* Define bordas arredondadas */
+  overflow: hidden; /* Garante que o conteúdo não ultrapasse os cantos */
+
+}
+
+.containerIcons:hover {
+  background-color: #464646e5;
+  transform: scale(1.2); /* Aumenta levemente sem afetar os outros */
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+.desktopWindow {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}

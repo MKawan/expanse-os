@@ -1,0 +1,57 @@
+
+  /* Ícone do aplicativo */
+  .app-icon {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    transition: 0.3s;
+  }
+  
+  .app-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Janela do aplicativo */
+  .window {
+    position: absolute;
+    width: 600px;  /* Largura fixa */
+    height: 400px; /* Altura fixa */
+    background: #333;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    top: 50%;      /* Começo no meio da tela */
+    left: 50%;     /* Começo no meio da tela */
+    transform: translate(-50%, -50%); /* Para centralizar a janela */
+    z-index: 10;  /* Para garantir que a janela fique acima dos ícones */
+  }
+  
+  .window-header {
+    background: #444;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+  }
+  
+  .window-controls button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .window-content {
+    padding: 20px;
+  }
+  
+  /* Janela minimizada */
+  .minimized {
+    height: 30px;
+  }
+  

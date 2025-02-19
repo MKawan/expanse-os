@@ -1,0 +1,66 @@
+import React, { useState, useEffect } from 'react';
+
+
+type folderManger = {
+    name: string,
+    parentPath: string,
+    path:  string,
+    isDirectory: boolean
+}[]
+const FolderManager: React.FC = () => {
+  const [files, setFiles] = useState<{ name: string; isDirectory: boolean; path: string }[]>([]);
+  const [currentPath, setCurrentPath] = useState<string>('/');
+
+    useEffect(() => {
+      // Verifique se a função onSystemInfoUpdate está definida no electron
+      if (window.electron?.onSystemInfoUpdate) {
+        window.electron.readDirectory(currentPath, (dirPath: any) => {
+          setFiles(dirPath.data);  // Atualiza o estado com os dados do diretório
+          console.log(files);
+        });
+      }
+    }, [currentPath]); // A dependência currentPath vai disparar sempre que mudar
+
+
+    // async function loadDirectory(dirPath: string) {
+    //     // Usando a API exposta pelo preload.js
+    //     const files = await (window as any).electron.readDirectory(dirPath);
+    //     setFiles(files);
+    //     console.log(files)
+    // }
+
+    return (
+      
+      <div>
+       <div>
+            <h3>Gerenciador de Arquivos</h3>
+            <div>
+                {files ? <div>{JSON.stringify(files, null, 0)}</div> :
+                
+                <span>Aguardando...</span>
+                }
+            </div>
+        </div>
+        <h3>Diretório Atual: {currentPath}</h3>
+        <ul>
+        {files.map((file) => (
+            <li
+              key={file.path}
+              onClick={() => file.isDirectory && setCurrentPath(file.path)}
+              style={{
+                cursor: file.isDirectory ? 'pointer' : 'default',
+                color: file.isDirectory ? 'blue' : 'black',
+                fontWeight: file.isDirectory ? 'bold' : 'normal',
+                marginBottom: '5px',
+              }}
+            >
+              {file.isDirectory ? '📁' : '📄'} {file.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+        
+    );
+};
+
+export default FolderManager;

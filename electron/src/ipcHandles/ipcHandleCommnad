@@ -1,0 +1,16 @@
+// const { ipcMain } = require('electron');
+// const { executeCommand } = require('../libs/terminalChild');  // Importa a função que executa o comando
+
+// // Manipulador de IPC para rodar o comando
+// function setupIpcHandlerPholder() {
+//     ipcMain.handle("run-command", async (event, { command, sudo }) => {
+//         try {
+//             const result = await executeCommand(command, sudo);
+//             return result; // Retorna o resultado do comando para o frontend
+//         } catch (error) {
+//             return error;
+//         }
+//     });
+// }
+
+// module.exports = { setupIpcHandlerPholder };

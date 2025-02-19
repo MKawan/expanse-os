@@ -1,0 +1,26 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "systeminformation": "^5.25.11",
+    "wait-on": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "@types/node": "^22.13.4",
+    "electron-rebuild": "^3.2.9",
+    "typescript": "^5.7.3"
+  }
+}
